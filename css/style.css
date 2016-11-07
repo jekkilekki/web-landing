@@ -24,7 +24,8 @@ a {
   width: 72px;
   height: 61px;
 }
-section {
+section,
+.section {
   border-bottom: 1px solid gainsboro;
   padding-top: 6em;
 }
@@ -109,13 +110,17 @@ section {
   height: 61px;
 }
 .navbar .nav-item {
-  height: 82px;
-  padding: 1.35em;
+  margin: 0;
+  padding: 0;
 }
-.navbar .nav-item.active,
-.navbar .nav-item:hover,
-.navbar .nav-item:focus,
-.navbar .nav-item:active {
+.navbar .nav-link {
+  padding: 1.775em 1.35em 1.35em;
+  /*margin-left: 1rem;*/
+}
+.navbar .nav-link.active,
+.navbar .nav-item:hover .nav-link,
+.navbar .nav-item:focus .nav-link,
+.navbar .nav-item:active .nav-link {
   border-bottom: 3px solid #ed5a24;
 }
 .navbar .navbar-brand,

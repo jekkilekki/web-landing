@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body id="home" data-spy="scroll" data-target="#main-nav">
     <header class="jumbotron jumbotron-fluid">
       <section id="top"><!-- Hero image (or video) as background-size: cover -->
         <div class="container text-xs-center">
@@ -86,14 +86,14 @@
           </a>
         </div>
       </section>
-      <nav class="navbar navbar-light bg-faded nav-bar-full" data-toggle="sticky-onscroll">
+      <nav id="main-nav" class="navbar navbar-light bg-faded nav-bar-full" data-toggle="sticky-onscroll">
         <div class="container">
           <a class="navbar-brand" href="#">
             <h1 class="screen-reader-text">SQIRL</h1>
             <img class="logo inject-svg" src="img/svg/sqirl_logo.svg">
           </a>
           <ul class="nav navbar-nav pull-sm-right">
-            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#top">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
           </ul>
@@ -143,7 +143,7 @@
           </div>
         </div>
       </section><!-- END #features -->
-      <section id="hero">
+      <article class="hero section"><!-- Originally <section id="hero"> -->
         <div class="container">
         <h3 class="section-title">Hero</h3>
           <div id="hero-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -203,8 +203,8 @@
             </ul>
           </div>
         </div>
-      </section><!-- END #hero -->
-      <section id="get-started" class="text-xs-center">
+      </article><!-- END #hero -->
+      <article class="get-started section text-xs-center"><!-- Originally <section id="get-started"> -->
         <div class="container">
           <h3 class="section-title">Get Started</h3>
           <div class="get-started-cards card-group">
@@ -231,7 +231,7 @@
             </div>
           </div>
         </div>
-      </section><!-- END #get-started -->
+      </article><!-- END #get-started -->
       <section id="contact" class="text-xs-center">
         <div class="container contact">
           <div class="row">
