@@ -129,6 +129,36 @@ section,
 .navbar .nav-item:active a {
   cursor: pointer;
 }
+.navbar-nav {
+  display: block;
+}
+.navbar-toggler {
+  display: none;
+  height: 50px;
+  background-position: 50% 25%;
+  position: relative;
+  top: 0.75em;
+}
+.navbar-toggler:after {
+  content: "Menu";
+  color: gray;
+  text-transform: uppercase;
+  font-size: 0.55em;
+  position: absolute;
+  left: 8px;
+  bottom: 6px;
+}
+.collapse {
+  position: absolute;
+}
+@media screen and ( max-width: 767px ) {
+  .navbar-toggler {
+    display: block;
+  }
+  .navbar-nav {
+    display: none;
+  }
+}
 .tagline {
   text-transform: uppercase;
   margin-bottom: 7em;
@@ -245,7 +275,9 @@ section,
 .hero-feature-image {
   position: absolute;
   right: 0;
+  top: 3em;
   max-width: 65%;
+  height: auto;
 }
 .hero-description {
   line-height: 1.8em;
@@ -261,6 +293,15 @@ section,
   font-weight: 500;
   box-shadow: 0 5px 5px silver;
   font-size: 1.1em;
+}
+@media screen and ( max-width: 767px ) {
+  .hero-btn {
+    float: right;
+    margin-top: 2em;
+  }
+  .hero-description {
+    float: left;
+  }
 }
 .hero-list-item p {
   text-transform: uppercase;
@@ -298,6 +339,50 @@ section,
   background-color: white;
   color: inherit;
 }
+@media screen and ( max-width: 991px ) {
+  .carousel-indicators p {
+    font-size: 0.75em;
+  }
+  .carousel-indicators h5 {
+    font-size: 1em;
+  }
+}
+@media screen and ( max-width: 767px ) {
+  .hero-list .card {
+    width: 50%;
+  }
+  .hero-list .card:nth-child(1),
+  .hero-list .card:nth-child(2) {
+    border-bottom: 1px solid gainsboro;
+  }
+  .hero-list .card:nth-child(2),
+  .hero-list .card:nth-child(4) {
+    border-left: 1px solid gainsboro;
+  }
+  .hero-title {
+    text-align: center;
+  }
+}
+@media screen and ( max-width: 575px ) {
+  .hero-list .card {
+    padding: 1em 0.5em;
+    /*border: none!important;*/
+    width: 49%;
+  }
+  .hero-description,
+  .hero-feature-image {
+    float: none;
+    width: 100%;
+    position: static;
+  }
+  .hero-btn,
+  .hero-title {
+    float: none;
+  }
+  .hero-image-wrapper {
+    margin-bottom: 3em;
+  }
+}
 
 /* GET STARTED section */
 .get-started-cards {
@@ -325,11 +410,19 @@ section,
   line-height: 1.8em;
   color: gray;
 }
-@media screen and ( max-width: 768px ) {
+@media screen and ( max-width: 991px ) {
+  .get-started-cards .card {
+    padding: 2em;
+  }
+}
+@media screen and ( max-width: 767px ) {
   .card {
     padding-bottom: 2em;
     padding-top: 2em;
     border-top: 1px solid gainsboro;
+  }
+  .get-started-cards .card {
+    padding: 3em;
   }
   .get-started-cards .card:not(.active) {
     border: none;
