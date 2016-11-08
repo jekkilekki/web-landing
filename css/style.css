@@ -94,6 +94,19 @@ section,
   padding: 0;
   border-radius: 0;
 }
+@media screen and ( max-width: 767px ) {
+  .navbar .container {
+    margin: 0;
+    width: 100%;
+  }
+  .navbar-brand {
+    left: 50%;
+    margin-left: -46px;
+  }
+  .navbar-toggler {
+    position: absolute!important;
+  }
+}
 .navbar.bg-faded {
   background: whitesmoke; /* original #e1e1e1; */
   /*background: rgba( 225, 225, 225, 0.8 );*/
@@ -148,9 +161,6 @@ section,
   left: 8px;
   bottom: 6px;
 }
-.collapse {
-  position: absolute;
-}
 @media screen and ( max-width: 767px ) {
   .navbar-toggler {
     display: block;
@@ -158,6 +168,9 @@ section,
   .navbar-nav {
     display: none;
   }
+}
+.collapse.is-sticky {
+  top: 78px;
 }
 .tagline {
   text-transform: uppercase;
