@@ -87,24 +87,25 @@
                     <!-- CONTACT FORM - START -->
                     <form id="requestForm" name="requestForm" action="contact.php" method="POST">
                       <div class="form-group row">
-                        <label class="form-control-label" name="contactName" for="requestName">Name</label>
+                        <label class="form-control-label screen-reader-text" name="contactName" for="requestName">Name</label>
                         <input type="text" id="requestName" placeholder="Full name">
                       </div>
                       <div class="form-group row">
-                        <label class="form-control-label" name="contactPhone" for="requestPhone">Phone</label>
+                        <label class="form-control-labell screen-reader-text" name="contactPhone" for="requestPhone">Phone</label>
                         <input type="tel" id="requestPhone" placeholder="1234567890">
                       </div>
                       <div class="form-group row">
-                        <label class="form-control-label" name="contactEmail" for="requestEmail">Email</label>
+                        <label class="form-control-labell screen-reader-text" name="contactEmail" for="requestEmail">Email</label>
                         <input type="email" id="requestEmail" placeholder="you@email.com">
                       </div>
                       <div class="form-group row">
-                        <label class="form-control-label" name="contactInst" for="requestInst">Institution</label>
+                        <label class="form-control-labell screen-reader-text" name="contactInst" for="requestInst">Institution</label>
                         <input type="text" id="requestInst" placeholder="Institution">
                       </div>
                       <div class="form-group row note">
                         <input type="checkbox" id="requestTerms">
-                        <label class="form-control-label" name="termsConditions" for="termsConditions">I have read and accept the <a href="#">Terms and Conditions</a></label>
+                        <label class="form-control-label hide-for-small" name="termsConditions" for="termsConditions">I have read and accept the <a href="#">Terms and Conditions</a></label>
+                        <label class="form-control-label show-for-small" name="termsConditions" for="termsConditions">I accept the <a href="#">Terms and Conditions</a></label>
                       </div>
 
                       <input class="btn demo-btn btn-lg btn-secondary" type="submit" id="requestSubmit" value="Call me back">
@@ -319,7 +320,8 @@
                     <input type="email" id="formEmail" placeholder="you@email.com">
                   </div>
                   <div class="form-group row">
-                    <label class="form-control-label" name="contactInst" for="formInst">Institution</label>
+                    <label class="form-control-label hide-for-small" name="contactInst" for="formInst">Institution</label>
+                    <label class="form-control-label show-for-small" name="contactInst" for="formInst">Inst.</label>
                     <input type="text" id="formInst" placeholder="Institution">
                   </div>
                   <div class="form-group row">

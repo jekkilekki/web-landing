@@ -225,9 +225,6 @@ section,
   font-weight: 100;
   margin-bottom: 20px;
 }
-#requestForm .form-control-label {
-  display: none;
-}
 .modal {
   background: rgba( 255,255,255,0.7 );
 }
@@ -277,7 +274,7 @@ section,
   margin-top: 2.5em;
 }
 .modal .note .form-control-label {
-  display: inline-block!important;
+  display: inline-block;
   width: auto;
   float: left;
   margin-left: 1em;
@@ -293,6 +290,68 @@ section,
   margin: 0.5em 0 1.5em;
   width: 100%;
   padding: 0.5em 3em;
+}
+@media screen and ( max-width: 767px ) {
+  .modal .contact-outer-area {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+  }
+  .modal .contact-inner-area {
+    width: 460px;
+    height: 460px;
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+  .modal input[type="text"],
+  .modal input[type="tel"],
+  .modal input[type="email"] {
+    padding-top: 0.25em;
+  }
+  .modal .form-group:last-of-type {
+    margin-top: 1em;
+  }
+  .modal .demo-btn {
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+@media screen and ( max-width: 575px ) {
+  .modal .contact-outer-area {
+    width: 360px;
+    height: 360px;
+    padding: 15px;
+  }
+  .modal .logo {
+    width: 40px;
+    display: none;
+  }
+  .modal .section-title {
+    margin-top: 1em;
+  }
+  .modal input[type="text"],
+  .modal input[type="tel"],
+  .modal input[type="email"] {
+    padding-top: 0em;
+  }
+  .modal .contact-inner-area {
+    width: 330px;
+    height: 330px;
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+  .modal .form-group {
+    font-size: 0.8rem;
+  }
+  .modal .form-group:last-of-type {
+    margin-top: 0.5em;
+  }
+  .modal .demo-btn {
+    font-size: 0.8rem;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: -1.5em;
+  }
 }
 
 /* FEATURES section */
@@ -736,4 +795,19 @@ footer .contact-details .fa {
 }
 footer .copyright {
   margin: 1em auto 2em;
+}
+
+.hide-for-small {
+  display: block!important;
+}
+.show-for-small {
+  display: none!important;
+}
+@media screen and ( max-width: 575px ) {
+  .hide-for-small {
+    display: none!important;
+  }
+  .show-for-small {
+    display: block!important;
+  }
 }
