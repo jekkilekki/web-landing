@@ -8,8 +8,17 @@ $( document ).ready( function() {
 
   // Custom
   var stickyToggle = function( sticky, stickyWrapper, scrollElement ) {
-    var stickyHeight = sticky.outerHeight();
-    var stickyTop = stickyWrapper.offset().top;
+
+    if(sticky.hasClass( 'collapse' ) ) {
+      var stickyTop = stickyWrapper.offset().top-79;
+      var stickyHeight = 'auto';
+    } else if( sticky.hasClass( 'in' ) ) {
+      var stickyTop = stickyWrapper.offset().top-79;
+      var stickyHeight = sticky.outerHeight();
+    } else {
+      var stickyTop = stickyWrapper.offset().top;
+      var stickyHeight = sticky.outerHeight();
+    }
     if( scrollElement.scrollTop() >= stickyTop ) {
       stickyWrapper.height( stickyHeight );
       sticky.addClass( "is-sticky" );

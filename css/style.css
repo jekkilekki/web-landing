@@ -15,8 +15,14 @@
   box-sizing: border-box;
   position: relative;
 }
-a {
+a,
+.collapse .nav-link:focus,
+.collapse .nav-link:hover,
+.collapse .nav-link:visited,
+.collapse .nav-link:active
+.collapse a.active {
   color: #ed5a24;
+  background: transparent;
   cursor: pointer;
 }
 .logo {
@@ -169,6 +175,11 @@ section,
     display: none;
   }
 }
+@media screen and ( min-width: 768px ) {
+  .collapse.in {
+    display: none;
+  }
+}
 .collapse.is-sticky {
   top: 78px;
 }
@@ -205,6 +216,83 @@ section,
 .demo-arrow:focus,
 .demo-arrow:active {
   color: #ed5a24;
+}
+
+/* MODAL */
+.modal .close {
+  float: none;
+  font-size: 4em;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+#requestForm .form-control-label {
+  display: none;
+}
+.modal {
+  background: rgba( 255,255,255,0.7 );
+}
+.modal-content {
+  background: transparent;
+  border: none;
+}
+.modal .contact-outer-area {
+  background: rgba( 93,35,14,0.3 );
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
+.modal .contact-inner-area {
+  background: white;
+  border-radius: 50%;
+  width: 560px;
+  height: 560px;
+  max-width: 100%;
+  padding: 1em 8em;
+}
+.modal .logo {
+  width: 100px;
+  margin-bottom: 0.5em;
+}
+.modal .section-title {
+  font-size: 1em;
+}
+.modal .section-title:after {
+  display: none;
+}
+.modal input[type="text"],
+.modal input[type="tel"],
+.modal input[type="email"] {
+  border-bottom: 1px solid gainsboro!important;
+  width: 100%!important;
+  margin: 0!important auto;
+  padding: 1em 0 0;
+}
+.modal .note {
+  font-size: 0.8em;
+}
+.modal .form-group:last-of-type {
+  margin-top: 2.5em;
+}
+.modal .note .form-control-label {
+  display: inline-block!important;
+  width: auto;
+  float: left;
+  margin-left: 1em;
+}
+.modal .note input[type="checkbox"] {
+  width: auto;
+  float: left;
+  margin-top: 3px;
+}
+.modal .demo-btn {
+  background: #ed5a24;
+  color: white;
+  margin: 0.5em 0 1.5em;
+  width: 100%;
+  padding: 0.5em 3em;
 }
 
 /* FEATURES section */
@@ -588,6 +676,28 @@ section,
   .contact-details .list-group-item,
   .copyright {
     font-size: 0.9em;
+  }
+}
+@media screen and ( max-width: 575px ) {
+  .contact .contact-outer-area {
+    width: 360px;
+    height: 360px;
+    padding: 15px;
+  }
+  .contact .contact-inner-area {
+    width: 330px;
+    height: 330px;
+  }
+  .contact .section-title {
+    font-size: 1.25rem;
+    margin-top: 1.5em;
+  }
+  .contact .form-group {
+    font-size: 0.9rem;
+  }
+  .contact .logo,
+  .contact .contact-details {
+    display: none;
   }
 }
 
