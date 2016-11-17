@@ -95,7 +95,9 @@ section,
   }
 }
 .jumbotron {
-  background: url( '../img/header.jpg' );
+  /*background: url( '../img/header.jpg' );*/
+  /*background: url( '../img/gif/volcano.gif' );*/
+  background: url( '../img/gif/misty-mtns.gif' );
   background-size: cover;
   background-position: center;
   height: 100%;
