@@ -33,3 +33,10 @@ $(window).resize(function() {
 
 // Kick off one resize to fix all videos on page load
 }).resize();
+
+var featureVideo = $('.feature-video')[0];
+var player = $f(featureVideo);
+$('.feature-video-overlay').on('click', function() {
+  $(this).css( "display", "none" );
+  player.api("play");
+});

@@ -9,17 +9,19 @@ $( document ).ready( function() {
   // Custom
   var stickyToggle = function( sticky, stickyWrapper, scrollElement ) {
 
+    var win = $('#features').offset().top - 73;
+
     if(sticky.hasClass( 'collapse' ) ) {
-      var stickyTop = stickyWrapper.offset().top-79;
+      var stickyTop = stickyWrapper.offset().top;
       var stickyHeight = 'auto';
     } else if( sticky.hasClass( 'in' ) ) {
-      var stickyTop = stickyWrapper.offset().top-79;
+      var stickyTop = stickyWrapper.offset().top;
       var stickyHeight = sticky.outerHeight();
     } else {
       var stickyTop = stickyWrapper.offset().top;
       var stickyHeight = sticky.outerHeight();
     }
-    if( scrollElement.scrollTop() >= stickyTop ) {
+    if( scrollElement.scrollTop() >= win ) {
       stickyWrapper.height( stickyHeight );
       sticky.addClass( "is-sticky" );
     } else {

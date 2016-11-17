@@ -33,7 +33,10 @@ a,
 section,
 .section {
   border-bottom: 1px solid gainsboro;
-  padding-top: 6em;
+  /*padding-top: 6em;*/
+}
+.section-panel {
+  min-height: 100vh;
 }
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -78,12 +81,18 @@ section,
   top: 0;
   z-index: 1000;
   width: 100%;
+  max-height: 73px;
 }
 
 /* JUMBOTRON TOP section */
 #top {
-  padding-top: 350px;
+  padding-top: 40vh;
   padding-bottom: 70px;
+}
+@media screen and (max-width: 767px) {
+  #top {
+    padding-top: 25vh;
+  }
 }
 .jumbotron {
   background: url( '../img/header.jpg' );
@@ -99,6 +108,9 @@ section,
 .navbar {
   padding: 0;
   border-radius: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 @media screen and ( max-width: 767px ) {
   .navbar .container {
@@ -121,11 +133,12 @@ section,
   /*height: 50px;*/
 }
 .navbar-brand {
-  padding: 10px 10px 0;
+  padding: 5px 10px 0;
   margin-right: 20px;
+  margin-bottom: -1px;
 }
 .navbar-brand .logo {
-  width: 72px;
+  width: 56px;
   height: 61px;
 }
 .navbar .nav-item {
@@ -133,7 +146,7 @@ section,
   padding: 0;
 }
 .navbar .nav-link {
-  padding: 1.775em 1.35em 1.35em;
+  padding: 1.5em 1em 1.35em;
   /*margin-left: 1rem;*/
 }
 .navbar .nav-link.active,
@@ -181,15 +194,20 @@ section,
   }
 }
 .collapse.is-sticky {
-  top: 78px;
+  top: 73px;
 }
 .tagline {
   text-transform: uppercase;
-  margin-bottom: 7em;
+  margin-bottom: 10vh;
   color: white;
   font-size: 2.25em;
   font-weight: 600;
   line-height: 1.5em;
+}
+@media screen and (max-width: 575px) {
+  .tagline {
+    font-size: 1.75em;
+  }
 }
 .demo-btn {
   color: #ed5a24;
@@ -198,6 +216,14 @@ section,
   font-size: 1.1em;
   text-transform: uppercase;
   padding: 1em 3em;
+}
+.view-more {
+  position: absolute;
+  bottom: 15vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 0px 0px 2px black;
+  z-index: 100;
 }
 .view-more:hover,
 .view-more:focus,
@@ -355,6 +381,12 @@ section,
 }
 
 /* FEATURES section */
+#features {
+  padding-top: 6em;
+}
+.features .view-more {
+  display: none;
+}
 .lead-in {
   margin-bottom: 2em;
   font-size: 1.2em;
@@ -371,10 +403,19 @@ section,
 }
 .feature-circle {
   border-radius: 50%;
+  border: 3px solid white;
   width: 170px;
   height: 170px;
   margin-bottom: 2.5em;
   background: gray;
+}
+.feature-circle:active,
+.feature-circle:focus,
+.feature-circle:hover {
+  border-color: #ed5a24;
+  box-shadow: 0px 5px 10px gray;
+  transform: scale( 1.1 );
+  transition: 0.3s all;
 }
 .feature-title {
   font-size: 0.9em;
@@ -411,6 +452,28 @@ section,
   height: 100%;
   border: 1px solid gainsboro;
 }
+.feature-video-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.feature-video-overlay:before {
+  font-family: "FontAwesome";
+  content: "\f01d";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 8em;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0.7;
+  display: block;
+  visibility: visible!important;
+}
 
 /* HERO section */
 #hero {
@@ -419,6 +482,9 @@ section,
   background-position: center;
   background-repeat: no-repeat;
   fill: gainsboro;
+}
+.hero .container {
+  border-bottom: 1px solid gainsboro;
 }
 .hero-feature {
   display: none;
@@ -500,14 +566,15 @@ section,
   padding: 2.5em 1.5em 1.25em;
   border-top: 3px solid white;
 }
-.carousel-indicators .active,
+.carousel-indicators .active {
+  border-color: #ed5a24;
+}
 .carousel-indicators li:active,
 .carousel-indicators li:focus,
 .carousel-indicators li:hover {
-  border-top: 3px solid #ed5a24;
   border-color: #ed5a24;
-  background-color: white;
-  color: inherit;
+  background-color: #ed5a24;
+  color: white;
 }
 @media screen and ( max-width: 991px ) {
   .carousel-indicators p {
@@ -582,6 +649,12 @@ section,
   line-height: 1.8em;
   color: gray;
 }
+.get-started-cards .card.hovered,
+.get-started-cards .card.hovered .card-text {
+  color: white;
+  background: #ed5a24;
+}
+
 @media screen and ( max-width: 991px ) {
   .get-started-cards .card {
     padding: 2em;
@@ -772,6 +845,7 @@ footer .logo {
   background: white;
   position: relative;
   z-index: 2;
+  fill: gainsboro;
 }
 footer hr {
   border-top: 1px solid gainsboro;
@@ -795,6 +869,7 @@ footer .contact-details .fa {
 }
 footer .copyright {
   margin: 1em auto 2em;
+  color: silver;
 }
 
 .hide-for-small {
