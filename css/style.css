@@ -513,8 +513,11 @@ section,
   position: absolute;
   right: 0;
   bottom: 3em;
-  max-width: 65%;
+  max-width: 50%;
   height: auto;
+}
+.hero-feature-image.overlap {
+  max-width: 65%;
 }
 .hero-description {
   line-height: 1.8em;
