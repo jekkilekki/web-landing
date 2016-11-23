@@ -195,7 +195,8 @@ section,
     display: none;
   }
 }
-.collapse.is-sticky {
+.collapse.is-sticky,
+.collapsing.is-sticky {
   top: 73px;
 }
 .tagline {
