@@ -36,7 +36,7 @@ $( document ).ready( function() {
 
     /* Turn on active state on the correct link when scrolling */
     /* @link:  http://codetheory.in/change-active-state-links-sticky-navigation-scroll/ */
-    var sections = $( 'section' ),
+    var sections = $( 'article' ),
         nav = $( 'nav, .view-more' ),
         nav_height = nav.outerHeight();
 
@@ -74,8 +74,8 @@ $( document ).ready( function() {
 
     /* Smooth Scroll from CSS Tricks - specific to front page */
     /* @link: https://css-tricks.com/snippets/jquery/smooth-scrolling/ */
-    $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    $('a[href*="#"]:not([href="#"]), .view-more').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname ) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
             if (target.length) {
@@ -91,6 +91,26 @@ $( document ).ready( function() {
             }
         }
     });
+
+    // Scroll arrow function - always scroll to next section if clicked, (back to top if clicked at last section - or display: none?)
+    // @TODO: Make this work
+    var firstSectionId = '#home';
+    var activeSection, activeSectionId = '#home';
+    var nextSection, nextSectionId = '#features';
+      $(window).bind( 'scroll', function() {
+        $( '.section' ).each(function() {
+          var art = $(this);
+          var pos = art.position().top - $(window).scrollTop();
+
+          if( pos <= 0 && art.hasClass( 'active' ) ) {
+            activeSection = art;
+            activeSectionId = '#' + activeSection.attr( 'id' );
+
+            nextSection = art.nextAll( 'article' );
+            nextSectionId = '#' + nextSection.attr( 'id' );
+          }
+        });
+      });
 
     // nav.find('a').on('click', function () {
     //   var $el = $(this)
