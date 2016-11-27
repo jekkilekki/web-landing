@@ -85,12 +85,12 @@ section,
 }
 
 /* JUMBOTRON TOP section */
-#top {
+.top {
   padding-top: 40vh;
   padding-bottom: 70px;
 }
 @media screen and (max-width: 767px) {
-  #top {
+  .top {
     padding-top: 25vh;
   }
 }
@@ -385,7 +385,7 @@ section,
 
 /* FEATURES section */
 #features {
-  padding-top: 6em;
+  /*padding-top: 6em;*/
 }
 .features .view-more {
   display: none;
@@ -479,7 +479,7 @@ section,
 }
 
 /* HERO section */
-#hero {
+#about {
   background: url( '../img/svg/sqirl_logo_bg.svg' );
   background-size: initial;
   background-position: center;
@@ -631,7 +631,7 @@ section,
 
 /* GET STARTED section */
 .get-started-cards {
-  margin: 3em auto 6em;
+  /*margin: 3em auto 6em;*/
 }
 .get-started-cards .card {
   padding: 4em;

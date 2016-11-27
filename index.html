@@ -32,13 +32,13 @@
     <meta name="twitter:creator" content="@sqirlcapital"/>
   </head>
 
-  <body id="home" data-spy="scroll" data-target="#main-nav">
+  <body id="home" class="section" data-spy="scroll" data-target="#main-nav">
 
     <!-- HEADER -->
     <!-- Jumbotron -->
     <header class="jumbotron jumbotron-fluid">
 
-      <section id="top" class="section-panel"><!-- Hero image (or video) as background-size: cover -->
+      <section class="top section-panel"><!-- Hero image (or video) as background-size: cover -->
         <div class="container text-xs-center">
           <h2 class="tagline">A faster, accurate and fully integrated loan system for your financial business</h2>
 
@@ -57,8 +57,11 @@
               <img class="logo inject-svg" src="img/svg/sqirl_logo.svg">
             </a>
             <ul class="nav navbar-nav pull-sm-right">
-              <li class="nav-item"><a class="nav-link" href="#top">Home</a></li>
+              <li class="nav-item"><a class="nav-link active" href="#top">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+              <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+              <li class="nav-item"><a class="nav-link" href="#get-started">Get Started</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
               <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
             </ul>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"></button>
@@ -137,7 +140,7 @@
 
         <!-- Efficient -->
         <article id="features" class="features efficient section section-panel">
-          <div class="container text-xs-center">
+          <div class="container full-height text-xs-center">
             <h3 class="section-title">Efficient</h3>
             <div class="row">
               <p class="lead-in">
@@ -178,23 +181,23 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </article><!-- END .efficient -->
+            </div><!-- END .card-deck-wrapper -->
+          </div><!-- END .container -->
+        </article><!-- END .efficient -->
 
-          <!-- Video -->
-          <article id="feature-video" class="video section">
-            <div class="container">
-              <div class="row video-row">
-                <span class="feature-video-overlay"></span>
-                <iframe class="feature-video" src="https://player.vimeo.com/video/173504479?api=1" width="1150" height="647" frameborder="0"></iframe>
-              </div>
+        <!-- Video -->
+        <article id="video" class="video section">
+          <div class="container full-height">
+            <div class="row video-row">
+              <span class="feature-video-overlay"></span>
+              <iframe class="feature-video" src="https://player.vimeo.com/video/173504479?api=1" width="1150" height="647" frameborder="0"></iframe>
             </div>
           </div>
         </article><!-- END .video -->
 
         <!-- Get Started -->
         <article id="get-started" class="get-started section section-panel text-xs-center active"><!-- Originally <section id="get-started"> -->
-          <div class="container">
+          <div class="container full-height">
             <h3 class="section-title">Get Started</h3>
             <div class="get-started-cards card-group">
               <div class="col-sm-12 col-md-4">
@@ -229,8 +232,8 @@
         </article><!-- END .get-started -->
 
         <!-- Hero -->
-        <article id="hero" class="hero section section-panel"><!-- Originally <section id="hero"> -->
-          <div class="container">
+        <article id="about" class="hero section section-panel"><!-- Originally <section id="hero"> -->
+          <div class="container full-height">
           <h3 class="section-title">Hero</h3>
             <div id="hero-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
               <div class="carousel-item hero-feature active"><!-- Sqirl logo as background -->
@@ -315,56 +318,58 @@
         </article><!-- END .hero -->
       </section><!-- END #features -->
 
-      <section class="section-panel text-xs-center">
+      <section class="text-xs-center">
 
         <!-- Contact -->
-        <article id="contact" class="container contact">
-          <div class="row">
-            <div class="contact-outer-area">
-              <div class="contact-inner-area">
-                <img class="logo inject-svg" src="img/svg/sqirl_logo.svg">
-                <h3 class="section-title">Contact Us</h3>
+        <article id="contact" class="contact section">
+          <div class="container full-height">
+            <div class="row">
+              <div class="contact-outer-area">
+                <div class="contact-inner-area">
+                  <img class="logo inject-svg" src="img/svg/sqirl_logo.svg">
+                  <h3 class="section-title">Contact Us</h3>
 
-                <!-- CONTACT FORM - START -->
-                <form id="contactForm" name="contactForm" action="contact.php" method="POST">
-                  <div class="form-group row">
-                    <label class="form-control-label" name="contactName" for="formName">Name</label>
-                    <input type="text" id="formName" placeholder="Enter name">
-                  </div>
-                  <div class="form-group row">
-                    <label class="form-control-label" name="contactEmail" for="formEmail">Email</label>
-                    <input type="email" id="formEmail" placeholder="you@email.com">
-                  </div>
-                  <div class="form-group row">
-                    <label class="form-control-label hide-for-small" name="contactInst" for="formInst">Institution</label>
-                    <label class="form-control-label show-for-small" name="contactInst" for="formInst">Inst.</label>
-                    <input type="text" id="formInst" placeholder="Institution">
-                  </div>
-                  <div class="form-group row">
-                    <label class="form-control-label" name="contactPhone" for="formPhone">Phone</label>
-                    <input type="tel" id="formPhone" placeholder="1234567890">
-                  </div>
-                  <input class="btn demo-btn btn-lg btn-secondary" type="submit" id="formSubmit" value="Send">
-                </form>
-                <!-- CONTACT FORM - END -->
+                  <!-- CONTACT FORM - START -->
+                  <form id="contactForm" name="contactForm" action="contact.php" method="POST">
+                    <div class="form-group row">
+                      <label class="form-control-label" name="contactName" for="formName">Name</label>
+                      <input type="text" id="formName" placeholder="Enter name">
+                    </div>
+                    <div class="form-group row">
+                      <label class="form-control-label" name="contactEmail" for="formEmail">Email</label>
+                      <input type="email" id="formEmail" placeholder="you@email.com">
+                    </div>
+                    <div class="form-group row">
+                      <label class="form-control-label hide-for-small" name="contactInst" for="formInst">Institution</label>
+                      <label class="form-control-label show-for-small" name="contactInst" for="formInst">Inst.</label>
+                      <input type="text" id="formInst" placeholder="Institution">
+                    </div>
+                    <div class="form-group row">
+                      <label class="form-control-label" name="contactPhone" for="formPhone">Phone</label>
+                      <input type="tel" id="formPhone" placeholder="1234567890">
+                    </div>
+                    <input class="btn demo-btn btn-lg btn-secondary" type="submit" id="formSubmit" value="Send">
+                  </form>
+                  <!-- CONTACT FORM - END -->
 
-                <ul class="list-group list-group-flush contact-details">
-                  <li class="list-group-item">
-                    <a href="#">
-                      <i class="fa fa-phone" aria-hidden="true"></i><!-- SVG icon -->
-                      <span>+1 647 232 9100</span>
-                    </a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="mailto:hello@sqirl.ca">
-                      <i class="fa fa-envelope" aria-hidden="true"></i><!-- SVG icon -->
-                      <span>hello@sqirl.ca</span>
-                    </a>
-                  </li>
-                </ul>
+                  <ul class="list-group list-group-flush contact-details">
+                    <li class="list-group-item">
+                      <a href="#">
+                        <i class="fa fa-phone" aria-hidden="true"></i><!-- SVG icon -->
+                        <span>+1 647 232 9100</span>
+                      </a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="mailto:hello@sqirl.ca">
+                        <i class="fa fa-envelope" aria-hidden="true"></i><!-- SVG icon -->
+                        <span>hello@sqirl.ca</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          </div><!-- END .container -->
         </article><!-- END .contact -->
 
       </section><!-- END #contact -->
