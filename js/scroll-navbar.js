@@ -22,20 +22,22 @@ $( document ).ready( function() {
     /* Turn on active state on the correct link when scrolling */
     /* @link:  http://codetheory.in/change-active-state-links-sticky-navigation-scroll/ */
     var sections = $( '.section' ),
-        nav = $( 'nav, .view-more' ),
+        nav = $( 'nav' ),
         nav_height = nav.outerHeight();
 
-    var containers = $( '.full-height' );
     $(window).on("resize", function() {
+      var containers = $( '.full-height' );
       containers.each(function() {
         var containerHeight = $(this).height() + nav_height;
         if( containerHeight >= $(window).height() ) {
-          // $(this).css( "padding-top", "6em" );
-          $(this).css( "margin-bottom", "0" );
+          $(this).css( "padding-top", "6em" );
+          $(this).css( "margin-bottom", "6em" );
+          $('.top').addClass( 'mobile-landscape' );
         } else {
           $(this).css( "padding-top", ( $(window).height() - containerHeight ) / 2 + "px" );
           $(this).css( "margin-bottom", ( $(window).height() - containerHeight ) / 2 + "px" );
         }
+        $('.top').css( "margin-bottom", "0" ); // be sure there is NO bottom margin for the top gif section
       });
     }).resize();
 
@@ -135,8 +137,23 @@ $( document ).ready( function() {
                 scrollTop: 0
             }, 1000);
             activeSectionId = 'home';
+            nav.find( 'a[href="#top"]' ).addClass( 'active' );
             return false;
           }
+      });
+
+      $('.increase-font').click( function() {
+        var currentFontSize = parseFloat( $('body').css('font-size'), 10 );
+        var newFontSize = currentFontSize * 1.1;
+        $('body').css( "font-size", newFontSize );
+      });
+      $('.decrease-font').click( function() {
+        var currentFontSize = parseFloat( $('body').css('font-size'), 10 );
+        var newFontSize = currentFontSize / 1.1;
+        $('body').css( "font-size", newFontSize );
+      });
+      $('.reset-font').click( function() {
+        $('body').css( "font-size", "16px" );
       });
 
 

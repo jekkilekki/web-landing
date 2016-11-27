@@ -6,6 +6,28 @@
  * Orange:  #ed5a24;
  */
 
+ /** Temporary **/
+ .font-manipulation {
+   position: fixed;
+   top: 2em;
+   right: 2em;
+   z-index: 10000;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+ }
+ .font-manipulation li {
+   display: inline-block;
+   padding: 0.1em 0.5em;
+   border: 1px solid gainsboro;
+   background: white;
+   border-radius: 5px;
+ }
+ .font-manipulation li a {
+   text-decoration: none;
+ }
+ /** END Temporary **/
+
 * {
   font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   transition: opacity 0.4s ease-in-out;
@@ -14,6 +36,10 @@
   -o-transition: opacity 0.4s ease-in-out;
   box-sizing: border-box;
   position: relative;
+}
+html,
+body {
+  font-size: 16px;
 }
 a,
 .collapse .nav-link:focus,
@@ -86,12 +112,12 @@ section,
 
 /* JUMBOTRON TOP section */
 .top {
-  padding-top: 40vh;
-  padding-bottom: 70px;
+  /*padding-top: 40vh;*/
+  /*padding-bottom: 70px;*/
 }
 @media screen and (max-width: 767px) {
   .top {
-    padding-top: 25vh;
+    /*padding-top: 25vh;*/
   }
 }
 .jumbotron {
@@ -182,6 +208,11 @@ section,
   left: 8px;
   bottom: 6px;
 }
+@media screen and ( max-width: 990px ) {
+  .navbar-nav .nav-item+.nav-item {
+    margin-left: 0;
+  }
+}
 @media screen and ( max-width: 767px ) {
   .navbar-toggler {
     display: block;
@@ -198,6 +229,12 @@ section,
 .collapse.is-sticky,
 .collapsing.is-sticky {
   top: 73px;
+}
+.tagline-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .tagline {
   text-transform: uppercase;
@@ -222,7 +259,7 @@ section,
 }
 .view-more {
   position: fixed;
-  bottom: 10vh;
+  bottom: 11vh;
   left: 50%;
   transform: translateX(-50%);
   text-shadow: 0px 0px 2px black;
@@ -238,13 +275,13 @@ section,
   font-size: 4em;
   font-weight: 300;
   display: block;
-  margin-top: 0.5em;
+  /*margin-top: 0.5em;*/
   margin-bottom: -0.5em;
 }
 .demo-arrow:hover,
 .demo-arrow:focus,
 .demo-arrow:active {
-  color: #ed5a24;
+  color: white;
 }
 
 /* MODAL */
@@ -492,6 +529,7 @@ section,
 .hero-feature {
   display: none;
   min-height: 450px;
+  padding: 0 2em;
   /*height: 300px;*/
 }
 .hero-feature.active {
@@ -516,6 +554,7 @@ section,
   bottom: 3em;
   max-width: 50%;
   height: auto;
+  padding-left: 2em;
 }
 .hero-feature-image.overlap {
   max-width: 65%;
@@ -617,6 +656,7 @@ section,
     float: none;
     width: 100%;
     position: static;
+    padding: 0;
   }
   .hero-btn,
   .hero-title {

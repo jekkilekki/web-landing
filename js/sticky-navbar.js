@@ -10,6 +10,28 @@ $( document ).ready( function() {
   var stickyToggle = function( sticky, stickyWrapper, scrollElement ) {
 
     var win = $('#features').offset().top - 73;
+    if( $(window).width() > $(window).height() && $(window).height() < 400 ) {
+      // win = $('.jumbotron').height() - 73;
+      $('.tagline').css( "font-size", "1.5em" );
+      $('.demo-btn').css( {
+        "font-size": "0.9em",
+        "padding": "1em 2em"
+      });
+    }
+    else if( $(window).width() < 575 ){
+      $('.tagline').css( "font-size", "1.75em" );
+      $('.demo-btn').css( {
+        "font-size": "1.1em",
+        "padding": "1em 3em"
+      });
+    }
+    else {
+      $('.tagline').css( "font-size", "2.25em" );
+      $('.demo-btn').css( {
+        "font-size": "1.1em",
+        "padding": "1em 3em"
+      });
+    }
 
     if(sticky.hasClass( 'collapse' ) ) {
       var stickyTop = stickyWrapper.offset().top;
