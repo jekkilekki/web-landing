@@ -9,9 +9,9 @@ $( document ).ready( function() {
   // Custom
   var stickyToggle = function( sticky, stickyWrapper, scrollElement ) {
 
-    var win = $('#features').offset().top - 73;
+    var win = $('#features').offset().top - 65;
     if( $(window).width() > $(window).height() && $(window).height() < 400 ) {
-      // win = $('.jumbotron').height() - 73;
+      // win = $('.jumbotron').height() - 65;
       $('.tagline').css( "font-size", "1.5em" );
       $('.demo-btn').css( {
         "font-size": "0.9em",
