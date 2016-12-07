@@ -942,6 +942,10 @@ section,
 /*--------------------------------------------------------------
 ## API
 --------------------------------------------------------------*/
+/**
+ * CSS-Tricks
+ * https://css-tricks.com/svg-line-animation-works/
+ */
 .api-path {
   fill: none;
   stroke: #1ab394;
@@ -950,11 +954,29 @@ section,
   stroke-miterlimit = 10;
   stroke-dasharray: 15;
   stroke-dashoffset: 2000;
+}
+.api-path {
   animation: dash 30s linear forwards infinite;
+  animation-delay: 1s;
+/*   animation: loop 30s linear forwards infinite; */
 }
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
+  }
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(4px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-8px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(8px, 0, 0);
   }
 }
 .api-sqirl path {
@@ -967,42 +989,51 @@ section,
   fill: white;
 }
 .api-sqirl {
-  animation: kaboom 5s ease alternate infinite;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-delay: 1s;
 }
 .api-bank1 {
-  animation: kaboom 5s ease alternate infinite;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
   animation-delay: 2s;
 }
 .api-client1 {
-  animation: kaboom 5s ease alternate infinite;
-  animation-delay: 4s;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-delay: 3s;
 }
 .api-bank2 {
-  animation: kaboom 5s ease alternate infinite;
-  animation-delay: 6s;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-delay: 4s;
 }
 .api-client2 {
-  animation: kaboom 5s ease alternate infinite;
-  animation-delay: 8s;
-}
-@keyframes kaboom {
-  90% {
-    transform: scale(1.0);
-  }
-  100% {
-    transform: scale(1.05);
-  }
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-delay: 5s;
 }
 
 /*--------------------------------------------------------------
 ## Algorithm
 --------------------------------------------------------------*/
-.text{font-family:'BigNoodleToo';}
+/*.text{font-family:'BigNoodleToo';}*/
 	.essential{font-size:65.0505px;}
 	.st3{opacity:0.05;}
 	.bankability{font-size:31.2379px;}
 	.information{font-size:48.7879px;}
 	.financial{font-size:169.7029px;}
+  .arrow{fill:black;}
 	.line{fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
 	.shirt-stripe{fill:#25AA8D;}
   .circle-bg{fill:#F7F8F8;}
